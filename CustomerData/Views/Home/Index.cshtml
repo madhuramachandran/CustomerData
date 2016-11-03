@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Track Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>*@
+<link href="~/Content/UIDecorator.css" rel="stylesheet" />
+<br />
+<h3>Check Order Details by entering order ID</h3>
+<div id="container">
+
+
+Your Order ID: <input id="ordID" type="text" />
+<input type="button" value="Search" onclick="findorder();" />
+    </div>
+<br/>
+<div id="orderdetails">
+<h3>Your Order Details</h3>
+<ul id="order" ></ul>
+</div>

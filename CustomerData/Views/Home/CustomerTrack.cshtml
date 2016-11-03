@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Track Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/UIDecorator.css" rel="stylesheet" />
+<br />
+<h3>Get Customer Details</h3>
+<div id="container">
+Enter your Customer Id: <input id="custID" type="text" />
+<input type="button" value="Search" onclick="findcustomer();" />
+    </div>
+<br />
+
+<h3>Details Requested</h3>
+<ul id="customer"></ul>

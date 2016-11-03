@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Orders By Customer</h2>
+<ul id="orders"/>
+
+Customer ID: <input id="custID" type="text" />
+<input type="button" value="Search" onclick="find();" />
+
+<ul id="order" />
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+    var uri = 'localhost:38999/api/order';
+
+    $(document).ready(function () {
+  
+      $.getJSON(uri)
+          .done(function (data) {
+            
+            $.each(data, function (key, item) {
+              // Add a list item for the product.
+              $('<li>', { text: formatItem(item) }).appendTo($('#orders'));
+            });
+          });
+    });
+
+    function formatItem(item) {
+        return item.OrderId + ': $' + item.OrderTotal;
+    }
+
+    function find() {
+      var id = $('#custID').val();
+      $.getJSON(uri + '/' + id)
+          .done(function (data) {
+              $('#order').text(formatItem(data));
+          })
+          .fail(function (jqXHR, textStatus, err) {
+              $('#order').text('Error: ' + err);
+          });
+    }
+</script>

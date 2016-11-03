@@ -1,0 +1,24 @@
+﻿body {
+}
+
+#order{
+    border: 3px solid #000066;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fffce0;
+}
+
+#customer{
+    border: 3px solid #006600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #e6f7ff;
+}
+
+#container{
+    border: 3px solid #800000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #ffe6e6;
+}
